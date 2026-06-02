@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Shuttle Tracking System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>University Shuttle Tracking System</h1>
+    <p>Real-Time GPS Tracking & Arrival Prediction</p>
+</header>
+
+<div class="container">
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>BUS-01</h3>
+            <p>Current Stop: Main Gate</p>
+            <p>Next Stop: Administrative Block</p>
+            <p id="eta1">ETA: 4 Minutes</p>
+        </div>
+
+        <div class="card">
+            <h3>BUS-02</h3>
+            <p>Current Stop: Library</p>
+            <p>Next Stop: Hostel</p>
+            <p id="eta2">ETA: 6 Minutes</p>
+        </div>
+
+        <div class="card">
+            <h3>System Status</h3>
+            <p class="status">All Shuttles Active</p>
+            <p>3 Shuttles Online</p>
+        </div>
+
+    </div>
+
+    <div class="map-container">
+        <div class="map-header">
+            Live Shuttle Location Map
+        </div>
+
+        <iframe
+            id="map"
+            src="https://maps.google.com/maps?q=6.5244,3.3792&z=15&output=embed">
+        </iframe>
+    </div>
+
+<!-- Shuttle Alerts Section -->
+
+<div class="alerts-section">
+
+    <h2>Shuttle Status Alerts</h2>
+
+    <div id="alertBox" class="alert normal">
+        BUS-01 is operating normally.
+    </div>
+
+</div>
+
+<!-- Incident Report Form -->
+
+<div class="report-section">
+
+    <h2>Report an Incident</h2>
+
+    <form id="incidentForm">
+
+        <label>Shuttle ID</label>
+        <input type="text" id="shuttleId" placeholder="Example: BUS-01" required>
+
+        <label>Incident Type</label>
+        <select id="incidentType">
+            <option>Unsafe Driving</option>
+            <option>Breakdown</option>
+            <option>Student Misconduct</option>
+            <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea
+            id="description"
+            rows="5"
+            placeholder="Describe the incident..."
+            required>
+        </textarea>
+
+        <button type="submit">
+            Submit Report
+        </button>
+
+    </form>
+
+    <p id="successMessage"></p>
+
+</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Shuttle</th>
+                <th>Current Stop</th>
+                <th>Next Stop</th>
+                <th>Estimated Arrival</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>BUS-01</td>
+                <td>Main Gate</td>
+                <td>Administrative Block</td>
+                <td id="tableEta1">4 mins</td>
+                <td class="status">On Route</td>
+            </tr>
+
+            <tr>
+                <td>BUS-02</td>
+                <td>Library</td>
+                <td>Hostel</td>
+                <td id="tableEta2">6 mins</td>
+                <td class="status">On Route</td>
+            </tr>
+
+            <tr>
+                <td>BUS-03</td>
+                <td>Faculty Building</td>
+                <td>Main Gate</td>
+                <td>3 mins</td>
+                <td class="status">On Route</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<footer>
+    © 2026 University Shuttle GPS Tracking System
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
